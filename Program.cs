@@ -63,7 +63,7 @@ else
 // Use the code below to enable detailed logging (function calls, token usage, etc.)
 // builder.Services.AddLogging(services => services.AddConsole().SetMinimumLevel(LogLevel.Trace)); 
 
-// Build the kernel with GitHub and FileIo plugins
+// Build the kernel with GitHub and File plugins
 Kernel kernel = builder.Build();
 kernel.Plugins.AddFromFunctions("GitHub", tools.Select(aiFunction => aiFunction.AsKernelFunction()));
 kernel.Plugins.AddFromType<FilePlugin>("Files");
@@ -199,7 +199,7 @@ Console.WriteLine("=============================================================
 var setDirectoryFunction = kernel.Plugins
     .GetFunction("Files", "set_working_directory");
 
-// Invoke SetWorkingDirectory(workingDirectory) to set a working directory within the FileIo plugin
+// Invoke SetWorkingDirectory(workingDirectory) to set a working directory within the File plugin
 var directoryFunctionResult = await setDirectoryFunction.InvokeAsync(kernel, new() { ["directoryPath"] = workingDirectory });
 
 // Interactive loop

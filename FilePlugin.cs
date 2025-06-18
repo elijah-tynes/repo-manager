@@ -106,6 +106,13 @@ public class FilePlugin
         {
             // Search for the file in the immediate directory
             string filePath = Path.Combine(workingDirectory, fileName);
+
+            // Do not read env files
+            if (Path.GetExtension(filePath).ToLower().Equals(".env"))
+            {
+                return "Cannot read an environment file";
+            }
+            
             if (File.Exists(filePath))
             {
                 // Read the file
@@ -152,6 +159,12 @@ public class FilePlugin
             {
                 try
                 {
+                    // Skip env files
+                    if (Path.GetExtension(Path.Combine(workingDirectory, file)).ToLower().Equals(".env"))
+                    {
+                        continue;
+                    }
+
                     fileContents.Add($"File: {Path.GetRelativePath(workingDirectory, file)}\n{File.ReadAllText(file)}\n");
                 }
                 catch (Exception ex)
