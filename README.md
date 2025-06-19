@@ -9,17 +9,13 @@ RepoManager is an AI-powered application designed to streamline project and repo
 - User-centric feedback and robust error handling throughout all actions  
 
 ## Prerequisites
+
 - [Install .NET SDK](https://dotnet.microsoft.com/en-us/download)
 - [Install Node.js](https://nodejs.org/)
 - [Create an OpenAI Key](https://platform.openai.com/account/api-keys) or [Create an Azure OpenAI Key](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/quickstart?pivots=rest-api)
 - [Create a GitHub Personal Access Token](https://github.com/settings/tokens)
 
 ## Getting Started
-Clone the repository:
-```bash
-git clone https://github.com/elijah-tynes/RepoManager.git
-cd RepoManager
-```
 
 Configure your `.env` file with the required environment variables:
 ```env
@@ -32,8 +28,10 @@ GITHUB_KEY=your-github-personal-access-token
 USE_AZURE_OPENAI=true
 ```
 
-Run the program:
+Clone the repository and run the program:
 ```bash
+git clone https://github.com/elijah-tynes/RepoManager.git
+cd RepoManager
 dotnet run
 ```
 
@@ -52,6 +50,30 @@ https://github.com/yourusername/MyApp
 ```
 
 You will then be able to interactively enter natural language requests, which are automatically routed to the appropriate agent (Coding or GitHub) to take action.
+
+## Samples
+### Using the Coding Agent to Update Files
+Modify a file:
+![image](https://github.com/user-attachments/assets/a21a8252-ebce-4c8b-859d-b133332b97ed)
+![image](https://github.com/user-attachments/assets/24b29e6c-4c22-4a87-8a97-eaa192e460ad)
+
+List files in a directory (Used implicitly by agent for context gathering):
+![image](https://github.com/user-attachments/assets/dbba7ce8-91ae-4623-9a08-d766ef4e66ee)
+
+Cross-context file modifications:
+![image](https://github.com/user-attachments/assets/135163a6-cb25-439f-81a9-641811a5630a)
+![image](https://github.com/user-attachments/assets/c17640c5-8427-4d5f-9c8f-6759aae8d0d0)
+
+**Notes**: 
+- Any file modifications provide the ability to revert changes, adding a layer of observability. 
+- The agent will not read any .env files to adhere to user privacy.
+
+### Using the GitHub Agent to Update a GitHub Repository
+Enter GitHub request:
+![image](https://github.com/user-attachments/assets/b31eee04-f124-4fc7-a865-ab6b58f7ea6d)
+
+Provide confirmation of intent before any changes are made:
+![image](https://github.com/user-attachments/assets/53210157-e9b3-4f1a-8a8d-66bb16a4879c)
 
 ---
 
