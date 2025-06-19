@@ -1,19 +1,53 @@
 # RepoManager
-
-## Overview
 RepoManager is an AI-powered application designed to streamline project and repository management. Leveraging advanced AI agents, it provides a conversational interface that accepts user requests to perform a wide range of code, file, and GitHub repository operations. Whether you need to manage files locally, read or update project code, or maintain GitHub repositories (committing, pushing, pull requests, and more), RepoManager simplifies these tasks by coordinating intelligent agents on your behalf.
 
 ### Key Features
-- Conversational interface to interact with Coding and GitHub agents.
-- Automated project directory navigation and file management
-- Seamless integration for GitHub operations (repo maintenance, PRs, commits, etc.)
-- Intelligent hand-off between file/code operations and version control actions
-- User-centric feedback and robust error handling throughout all actions
+- Conversational interface to interact with Coding and GitHub agents  
+- Automated project directory navigation and file management  
+- Seamless integration for GitHub operations (repo maintenance, PRs, commits, etc.)  
+- Intelligent hand-off between file/code operations and version control actions  
+- User-centric feedback and robust error handling throughout all actions  
 
-## Usage
-- Configure `.env` with all the required variables (`OPENAI_MODEL`, `OPENAI_ENDPOINT`, `OPENAI_KEY`, `GITHUB_KEY`). Optionally, include the env variable `USE_AZURE_OPENAI=true` if you want to use Azure OpenAI instead of OpenAI endpoints.
-- On startup, provide paths for your project directory and your desired GitHub repository link.
-- Interactively enter requests, which will be managed by the appropriate AI agent.
+## Prerequisites
+- [Install .NET SDK](https://dotnet.microsoft.com/en-us/download)
+- [Install Node.js](https://nodejs.org/)
+- [Create an OpenAI Key](https://platform.openai.com/account/api-keys) or [Create an Azure OpenAI Key](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/quickstart?pivots=rest-api)
+- [Create a GitHub Personal Access Token](https://github.com/settings/tokens)
+
+## Getting Started
+Configure your `.env` file with the required environment variables:
+```env
+OPENAI_MODEL=your-model-id
+OPENAI_KEY=your-openai-api-key
+OPENAI_ENDPOINT=your-openai-endpoint
+GITHUB_KEY=your-github-personal-access-token
+
+# Optional: use Azure OpenAI instead of OpenAI
+USE_AZURE_OPENAI=true
+```
+
+Clone the repository and run the program:
+```bash
+git clone https://github.com/elijah-tynes/RepoManager.git
+cd RepoManager
+dotnet run
+```
+
+On startup, the application will prompt for:
+
+**Local project directory path**  
+Example (Windows):  
+```bash
+C:\Users\yourname\Projects\MyApp
+```
+
+**GitHub repository link**  
+Example:  
+```bash
+https://github.com/yourusername/MyApp
+```
+
+You will then be able to interactively enter natural language requests, which are automatically routed to the appropriate agent (Coding or GitHub) to take action.
 
 ---
 
