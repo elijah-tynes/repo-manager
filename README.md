@@ -15,6 +15,12 @@ RepoManager is an AI-powered application designed to streamline project and repo
 - [Create a GitHub Personal Access Token](https://github.com/settings/tokens)
 
 ## Getting Started
+Clone the repository:
+```bash
+git clone https://github.com/elijah-tynes/RepoManager.git
+cd RepoManager
+```
+
 Configure your `.env` file with the required environment variables:
 ```env
 OPENAI_MODEL=your-model-id
@@ -26,10 +32,8 @@ GITHUB_KEY=your-github-personal-access-token
 USE_AZURE_OPENAI=true
 ```
 
-Clone the repository and run the program:
+Run the program:
 ```bash
-git clone https://github.com/elijah-tynes/RepoManager.git
-cd RepoManager
 dotnet run
 ```
 
