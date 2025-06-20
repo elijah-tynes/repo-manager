@@ -64,9 +64,10 @@ Cross-context file modifications:
 ![image](https://github.com/user-attachments/assets/135163a6-cb25-439f-81a9-641811a5630a)
 ![image](https://github.com/user-attachments/assets/c17640c5-8427-4d5f-9c8f-6759aae8d0d0)
 
-**Notes**: 
-- Any file modifications provide the ability to revert changes, adding a layer of observability. 
-- The agent will not read any .env files to adhere to user privacy.
+> [!NOTE]
+> Any file modifications provide the ability to revert changes, adding a layer of observability. 
+>
+> The agent will not read any .env files to adhere to user privacy.
 
 ### Using the GitHub Agent to Update a GitHub Repository
 Enter GitHub request:
