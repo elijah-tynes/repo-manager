@@ -31,7 +31,7 @@ USE_AZURE_OPENAI=true
 Clone the repository and run the program:
 ```bash
 git clone https://github.com/elijah-tynes/repo-manager.git
-cd RepoManager
+cd repo-manager/RepoManager
 dotnet run
 ```
 
